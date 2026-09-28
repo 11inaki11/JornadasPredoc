@@ -1,0 +1,20 @@
+Fotos provisionales para la web de las Jornadas Predoctorales CAR.
+Todas proceden de webs institucionales del CAR / CSIC / UPM o de sus grupos. Sustituir por fotos propias (o pedir permiso) antes de publicar.
+
+hero-01-sede.jpg  |  Fachada de la ETSI Industriales (UPM) · Wikimedia Commons, CC BY-SA 4.0 ("Escuela Técnica Superior de Ingenieros Industriales - Madrid 001.jpg")
+hero-02-lab.jpg  |  Laboratorio CVAR montando un dron · cvar-upm.github.io
+hero-03-drones.jpg  |  Dron sobrevolando un USV · car.upm-csic.es (noticias)
+hero-04-personas.jpg  |  Entrevista/podcast en el CAR · car.upm-csic.es (noticias)
+sobre-01-networking.jpg  |  Gente charlando en una sala del CAR · car.upm-csic.es (noticias)
+sobre-02-poster.jpg  |  Explicando un trabajo en el laboratorio GAMHE · gamhe.eu
+sobre-03-robot.jpg  |  Robot escalador ROMERIN (RobCib) · blogs.upm.es/romerin
+area-campo.jpg  |  Vehículo autónomo en viñedo (Arganda) · car.upm-csic.es (noticias)
+area-exo.jpg  |  Exoesqueleto de miembro inferior · biorobotics.car.upm-csic.es
+area-autopia.jpg  |  Coches AUTOPIA en la pista de Arganda · autopia.car.upm-csic.es
+area-aerea.jpg  |  Pruebas de vuelo con dron · car.upm-csic.es (noticias)
+area-percepcion.jpg  |  Señales EEG en el laboratorio · biorobotics.car.upm-csic.es
+area-industrial.jpg  |  Laboratorio GAMHE 5.0 · gamhe.eu
+area-ia.jpg  |  Robot social en una feria · car.upm-csic.es (noticias)
+actividades-poster.jpg  |  Doctorandas del CAR junto a su póster · foto propia (1788853860934.jpeg)
+sede-mapa.jpg  |  Fachada de la ETSI Industriales (UPM) · Wikimedia Commons, CC0 ("Madrid - Escuela Técnica Superior de Ingenieros Industriales (UPM) 2.jpg")
+requisitos-doctorandos.jpg  |  Grupo de investigadoras con el cartel del CAR · car.upm-csic.es (noticias)
