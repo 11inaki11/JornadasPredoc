@@ -257,6 +257,14 @@
   .reg h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:700;color:#fff;}
   .reg p{color:rgba(255,255,255,.86);font-size:1.06rem;margin:18px auto 28px;max-width:46ch;}
   .btn-white{background:#fff;color:var(--blue);}
+  .deadlines{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;text-align:left;}
+  .dl{border:1px solid rgba(255,255,255,.3);border-radius:4px;padding:18px 20px;background:rgba(255,255,255,.06);}
+  .dl small{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sky);display:block;margin-bottom:6px;}
+  .dl strong{font-family:var(--display);font-weight:700;font-size:1.4rem;color:#fff;display:block;margin-bottom:6px;}
+  .dl > span{font-size:.9rem;color:rgba(255,255,255,.8);line-height:1.5;display:block;}
+  .deadline-note{font-size:.96rem;color:var(--muted);margin-top:14px;}
+  .deadline-note strong{color:var(--blue);}
+  @media (max-width:560px){.deadlines{grid-template-columns:1fr;}}
   .btn-white:hover{background:var(--sky);color:var(--navy);}
 
   /* CONTACTO */
@@ -365,7 +373,7 @@
       <div class="fact"><small><span data-lang="es">Fecha</span><span data-lang="en">Date</span></small><span><span data-lang="es">27 de noviembre de 2026</span><span data-lang="en">November 27, 2026</span></span></div>
       <div class="fact"><small><span data-lang="es">Lugar</span><span data-lang="en">Venue</span></small><span>ETSI Industriales · <span data-lang="es">Aula C</span><span data-lang="en">Classroom C</span></span></div>
       <div class="fact"><small><span data-lang="es">Formato</span><span data-lang="en">Format</span></small><span><span data-lang="es">Pósteres + charlas cortas</span><span data-lang="en">Posters + short talks</span></span></div>
-      <div class="fact"><small><span data-lang="es">Inscripción</span><span data-lang="en">Registration</span></small><span class="live"><span data-lang="es">Abierta</span><span data-lang="en">Open</span></span></div>
+      <div class="fact"><small><span data-lang="es">Inscripción</span><span data-lang="en">Registration</span></small><span class="live"><span data-lang="es">Abierta hasta el 30 oct</span><span data-lang="en">Open until Oct 30</span></span></div>
     </div>
   </div>
 </section>
@@ -447,6 +455,7 @@
         <h3><span data-lang="es">Póster</span><span data-lang="en">Poster</span></h3>
         <p><span data-lang="es">Todo el mundo trae un póster que resuma su proyecto. Para que no sea un marrón, os pasaremos plantillas y ejemplos que solo hay que rellenar. Si prefieres ir por libre, también puedes: tu roadmap, tu metodología, tus resultados, lo que se te ha torcido por el camino... lo que mejor cuente en qué punto estás.</span><span data-lang="en">Everyone brings a poster summarising their project. So it's not a chore, we'll hand out templates and examples you can just fill in. If you'd rather do your own thing, go for it: your roadmap, your methodology, your results, what's gone wrong along the way, whatever best shows where you're at.</span></p>
         <p class="callout"><span data-lang="es">No tienes que imprimir ni pagar el póster. Nos lo envías y la organización se encarga del resto.</span><span data-lang="en">You don't have to print or pay for the poster. Send it to us and the organisers take care of the rest.</span></p>
+        <p class="deadline-note"><span data-lang="es"><strong>Fecha límite de envío: 8 de noviembre.</strong> Más adelante te contactaremos para indicarte cómo enviarlo.</span><span data-lang="en"><strong>Submission deadline: November 8.</strong> We'll get in touch later on to tell you how to send it.</span></p>
       </div>
     </div>
 
@@ -531,7 +540,7 @@
         <h2 style="font-size:clamp(1.9rem,3.4vw,2.8rem);margin-bottom:28px"><span data-lang="es">¿Quién puede participar?</span><span data-lang="en">Who can take part?</span></h2>
         <ul class="check">
           <li><b>01</b><span><span data-lang="es">Estar haciendo el doctorado en el CAR. Da igual en qué programa estés matriculado o si estás de estancia en el centro.</span><span data-lang="en">Be doing your PhD at CAR. Doesn't matter which programme you're enrolled in, or if you're just here on a research stay.</span></span></li>
-          <li><b>02</b><span><span data-lang="es"><strong>Obligatorio:</strong> elaborar un póster que sintetice tu proyecto de investigación.</span><span data-lang="en"><strong>Mandatory:</strong> prepare a poster summarising your research project.</span></span></li>
+          <li><b>02</b><span><span data-lang="es"><strong>Obligatorio:</strong> elaborar un póster que sintetice tu proyecto de investigación y enviarlo antes del 8 de noviembre.</span><span data-lang="en"><strong>Mandatory:</strong> prepare a poster summarising your research project and send it in by November 8.</span></span></li>
           <li><b>03</b><span><span data-lang="es"><strong>Opcional:</strong> realizar una presentación en alguno de los formatos disponibles (larga, corta o reverse pitch).</span><span data-lang="en"><strong>Optional:</strong> give a talk in one of the available formats (long, short or reverse pitch).</span></span></li>
         </ul>
       </div>
@@ -547,6 +556,18 @@
       <h2><span data-lang="es">Reserva tu sitio.</span><span data-lang="en">Save your spot.</span></h2>
       <p><span data-lang="es">Ya puedes inscribirte a través del formulario: dinos si quieres presentar y en qué formato (larga, demo, corta o reverse pitch), o si solo traerás el póster. Te llevará cinco minutos.</span><span data-lang="en">You can now register through the form: tell us if you'd like to give a talk and in which format (long, demo, short or reverse pitch), or if you'll just be bringing a poster. It takes five minutes.</span></p>
       <a class="btn btn-white" href="https://docs.google.com/forms/d/e/1FAIpQLSfoVAnUM-6L5foBFUURcu08NNNlkxwPZKhWRiWDv7Tc_5d9RA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer"><span data-lang="es">Inscríbete</span><span data-lang="en">Register</span> <span class="arr">→</span></a>
+      <div class="deadlines">
+        <div class="dl">
+          <small><span data-lang="es">Inscripción</span><span data-lang="en">Registration</span></small>
+          <strong><span data-lang="es">30 de octubre</span><span data-lang="en">October 30</span></strong>
+          <span><span data-lang="es">Último día para apuntarte a las jornadas.</span><span data-lang="en">Last day to sign up for the conference.</span></span>
+        </div>
+        <div class="dl">
+          <small><span data-lang="es">Envío del póster</span><span data-lang="en">Poster submission</span></small>
+          <strong><span data-lang="es">8 de noviembre</span><span data-lang="en">November 8</span></strong>
+          <span><span data-lang="es">Más adelante te contactaremos para indicarte cómo enviarlo.</span><span data-lang="en">We'll get in touch later on to tell you how to send it.</span></span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
