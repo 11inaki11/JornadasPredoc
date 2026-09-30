@@ -317,13 +317,18 @@
   .venue .meta{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;color:var(--blue);margin-top:14px;display:flex;gap:18px;flex-wrap:wrap;}
   .venue .meta a{text-decoration:none;border-bottom:1px solid var(--line);}
 
-  /* REQUISITOS */
-  .req{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center;}
-  .req .ph{height:420px;border-radius:4px;}
-  .check{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-dark);}
-  .check li{display:grid;grid-template-columns:34px 1fr;gap:18px;padding:24px 0;border-bottom:1px solid var(--line-dark);font-size:1.06rem;line-height:1.6;}
-  .check li b{font-family:var(--mono);color:var(--sky);font-size:.8rem;padding-top:6px;}
-  .check li strong{color:var(--sky);font-weight:600;}
+  /* QUIÉN PARTICIPA (dentro de "Participar") */
+  .who-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:72px;}
+  .who{border-radius:6px;padding:28px 30px;background:var(--white);border:1px solid var(--line);}
+  .who small{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);}
+  .who h3{font-size:clamp(1.4rem,2.2vw,1.8rem);margin:10px 0 16px;}
+  .who p{color:var(--muted);font-size:1rem;line-height:1.65;}
+  .who-main{background:var(--navy);color:#fff;border-color:transparent;}
+  .who-main small{color:var(--sky);}
+  .who ul{list-style:none;margin:0;padding:0;}
+  .who li{display:grid;grid-template-columns:30px 1fr;gap:14px;padding:14px 0;border-top:1px solid var(--line-dark);font-size:.98rem;line-height:1.55;}
+  .who li b{font-family:var(--mono);color:var(--sky);font-size:.78rem;padding-top:3px;}
+  .who li strong{color:var(--sky);font-weight:600;}
 
   /* INSCRIPCIÓN */
   .reg{max-width:600px;margin:0 auto;text-align:center;}
@@ -364,7 +369,7 @@
 
   /* ------------------------------------------------------------ RESPONSIVE */
   @media (max-width:960px){
-    .split,.feature,.prog,.req,.contact{grid-template-columns:1fr;gap:40px;}
+    .split,.feature,.prog,.contact{grid-template-columns:1fr;gap:40px;}
     .facts,.stats{grid-template-columns:1fr 1fr;}
     .fact:nth-child(2),.stat:nth-child(2){border-right:0;}
     .fact:nth-child(3),.fact:nth-child(4){border-top:1px solid var(--line-dark);}
@@ -374,7 +379,7 @@
     .fmt{grid-template-columns:90px 1fr;}
     .fmt p{grid-column:2;}
     .tl li.brk{margin:0;padding-left:12px;padding-right:12px;}
-    .req .ph,.feature .ph{height:300px;}
+    .feature .ph{height:300px;}
     .tpl-grid{grid-template-columns:1fr 1fr;}
   }
   @media (max-width:900px){
@@ -421,7 +426,6 @@
       <a href="#actividades"><span data-lang="es">Participar</span><span data-lang="en">Take part</span></a>
       <a href="#plantillas"><span data-lang="es">Plantillas</span><span data-lang="en">Templates</span></a>
       <a href="#programa"><span data-lang="es">Programa</span><span data-lang="en">Program</span></a>
-      <a href="#requisitos"><span data-lang="es">Requisitos</span><span data-lang="en">Requirements</span></a>
       <a href="#contacto"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a>
     </nav>
     <button class="lang" id="langToggle" type="button">EN</button>
@@ -523,10 +527,27 @@
   <div class="wrap">
     <div class="sec-head rv">
       <div>
-        <p class="sec-tag"><span data-lang="es">Cómo se participa</span><span data-lang="en">How to take part</span></p>
-        <h2><span data-lang="es">Un póster para todos. El resto, como tú quieras.</span><span data-lang="en">A poster for everyone. The rest, your call.</span></h2>
+        <p class="sec-tag"><span data-lang="es">Quién participa y cómo</span><span data-lang="en">Who takes part and how</span></p>
+        <h2><span data-lang="es">Los predocs presentan. Todo el centro puede venir.</span><span data-lang="en">PhD students present. Everyone's welcome to come.</span></h2>
       </div>
-      <p class="aside"><span data-lang="es">Hay una parte común para todos (el póster) y varios formatos opcionales que cada uno elige según le apetezca.</span><span data-lang="en">There's one thing everyone does (the poster), plus a few optional formats you can pick as you like.</span></p>
+      <p class="aside"><span data-lang="es">Si haces el doctorado en el CAR, participas activamente: un póster obligatorio y, si te apetece, una charla. Si no eres predoc, puedes venir a verlo todo.</span><span data-lang="en">If you're doing your PhD at CAR, you take an active part: a mandatory poster and, if you fancy it, a talk. If you're not a PhD student, you're welcome to come and see it all.</span></p>
+    </div>
+
+    <div class="who-grid rv">
+      <div class="who who-main">
+        <small><span data-lang="es">Doctorandos del CAR</span><span data-lang="en">CAR PhD students</span></small>
+        <h3><span data-lang="es">Participas activamente</span><span data-lang="en">You take an active part</span></h3>
+        <ul>
+          <li><b>01</b><span><span data-lang="es">Estás haciendo el doctorado en el CAR. Da igual en qué programa estés matriculado o si estás de estancia en el centro.</span><span data-lang="en">You're doing your PhD at CAR. Doesn't matter which programme you're enrolled in, or if you're just here on a research stay.</span></span></li>
+          <li><b>02</b><span><span data-lang="es"><strong>Obligatorio:</strong> un póster que resuma tu proyecto de investigación, enviado antes del 8 de noviembre.</span><span data-lang="en"><strong>Mandatory:</strong> a poster summarising your research project, sent in by November 8.</span></span></li>
+          <li><b>03</b><span><span data-lang="es"><strong>Opcional:</strong> una presentación en alguno de los formatos (larga, demo, corta o reverse pitch).</span><span data-lang="en"><strong>Optional:</strong> a talk in one of the formats (long, demo, short or reverse pitch).</span></span></li>
+        </ul>
+      </div>
+      <div class="who">
+        <small><span data-lang="es">¿No eres predoc?</span><span data-lang="en">Not a PhD student?</span></small>
+        <h3><span data-lang="es">Ven de público</span><span data-lang="en">Come along</span></h3>
+        <p><span data-lang="es">Puedes venir a ver los pósteres y escuchar las charlas. No tienes que presentar nada.</span><span data-lang="en">Come and see the posters and listen to the talks. You don't have to present anything.</span></p>
+      </div>
     </div>
 
     <div class="feature">
@@ -534,7 +555,7 @@
       <div class="rv rv-d1">
         <span class="tag tag-req"><span data-lang="es">Obligatorio</span><span data-lang="en">Mandatory</span></span>
         <h3><span data-lang="es">Póster</span><span data-lang="en">Poster</span></h3>
-        <p><span data-lang="es">Todo el mundo trae un póster que resuma su proyecto. Para que no sea un marrón, os pasaremos plantillas y ejemplos que solo hay que rellenar. Si prefieres ir por libre, también puedes: tu roadmap, tu metodología, tus resultados, lo que se te ha torcido por el camino... lo que mejor cuente en qué punto estás.</span><span data-lang="en">Everyone brings a poster summarising their project. So it's not a chore, we'll hand out templates and examples you can just fill in. If you'd rather do your own thing, go for it: your roadmap, your methodology, your results, what's gone wrong along the way, whatever best shows where you're at.</span></p>
+        <p><span data-lang="es">Cada doctorando trae un póster que resuma su proyecto. Para que no sea un marrón, tienes plantillas y ejemplos que solo hay que rellenar. Si prefieres ir por libre, también puedes: tu roadmap, tu metodología, tus resultados, lo que se te ha torcido por el camino... lo que mejor cuente en qué punto estás.</span><span data-lang="en">Every PhD student brings a poster summarising their project. So it's not a chore, there are templates and examples you can just fill in. If you'd rather do your own thing, go for it: your roadmap, your methodology, your results, what's gone wrong along the way, whatever best shows where you're at.</span></p>
         <a class="tpl-jump" href="#plantillas"><span data-lang="es">Ver plantillas</span><span data-lang="en">See templates</span> →</a>
         <p class="callout"><span data-lang="es">No tienes que imprimir ni pagar el póster. Nos lo envías y la organización se encarga del resto.</span><span data-lang="en">You don't have to print or pay for the poster. Send it to us and the organisers take care of the rest.</span></p>
         <p class="deadline-note"><span data-lang="es"><strong>Fecha límite de envío: 8 de noviembre.</strong> Más adelante te contactaremos para indicarte cómo enviarlo.</span><span data-lang="en"><strong>Submission deadline: November 8.</strong> We'll get in touch later on to tell you how to send it.</span></p>
@@ -618,7 +639,7 @@
           <h3>General</h3>
           <p><span data-lang="es">La base con todas las piezas del estilo de las jornadas (cabecera, secciones, tablas, cajas y colores) para montar tu póster a tu manera.</span><span data-lang="en">The base kit with every piece of the conference style (header, sections, tables, boxes and colours) to build your poster your own way.</span></p>
           <p class="tpl-for"><b>→</b> <span data-lang="es">Si prefieres ir por libre</span><span data-lang="en">If you'd rather do your own thing</span></p>
-          <a class="btn btn-primary tpl-btn" href="https://docs.google.com/presentation/d/1b7yj-mfBA75pIXYJ3qy5FTij_5QFKtqVK0oV8htrFMs/export/pptx" target="_blank" rel="noopener noreferrer"><span class="ok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-lang="es">Descargar</span><span data-lang="en">Download</span></span><span class="soon"><span data-lang="es">Próximamente</span><span data-lang="en">Coming soon</span></span></a>
+          <a class="btn btn-primary tpl-btn" href="https://docs.google.com/presentation/d/1fsBfDwuSS-tfSyX1kF-H6z3OQMv77biH/export/pptx" target="_blank" rel="noopener noreferrer"><span class="ok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-lang="es">Descargar</span><span data-lang="en">Download</span></span><span class="soon"><span data-lang="es">Próximamente</span><span data-lang="en">Coming soon</span></span></a>
         </div>
       </article>
 
@@ -630,7 +651,7 @@
           <h3>Roadmap</h3>
           <p><span data-lang="es">Cuenta hacia dónde vas: objetivos, plan de trabajo y próximos hitos. No hace falta tener resultados.</span><span data-lang="en">Show where you're heading: goals, work plan and upcoming milestones. No results needed.</span></p>
           <p class="tpl-for"><b>→</b> <span data-lang="es">Ideal si estás empezando</span><span data-lang="en">Great if you're just starting out</span></p>
-          <a class="btn btn-primary tpl-btn" href="https://docs.google.com/presentation/d/1Dm5Ls-ZFbDN8vV6dbTwWLSc0zgWHtlgvzuoKEACn9NU/export/pptx" target="_blank" rel="noopener noreferrer"><span class="ok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-lang="es">Descargar</span><span data-lang="en">Download</span></span><span class="soon"><span data-lang="es">Próximamente</span><span data-lang="en">Coming soon</span></span></a>
+          <a class="btn btn-primary tpl-btn" href="https://docs.google.com/presentation/d/19tqr93QRvA-xcZ2x4UZbVhJPBW68ljGA/export/pptx" target="_blank" rel="noopener noreferrer"><span class="ok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-lang="es">Descargar</span><span data-lang="en">Download</span></span><span class="soon"><span data-lang="es">Próximamente</span><span data-lang="en">Coming soon</span></span></a>
         </div>
       </article>
 
@@ -642,7 +663,7 @@
           <h3>Research questions</h3>
           <p><span data-lang="es">Plantea tus preguntas de investigación, cómo las estás abordando y lo que has encontrado hasta ahora.</span><span data-lang="en">Set out your research questions, how you're tackling them and what you've found so far.</span></p>
           <p class="tpl-for"><b>→</b> <span data-lang="es">Ideal si estás empezando</span><span data-lang="en">Great if you're just starting out</span></p>
-          <a class="btn btn-primary tpl-btn" href="https://docs.google.com/presentation/d/1Q4I6CcKjUXWg9Fdphf9Zk6Bvw-IfFutIYDSG36B9cTA/export/pptx" target="_blank" rel="noopener noreferrer"><span class="ok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-lang="es">Descargar</span><span data-lang="en">Download</span></span><span class="soon"><span data-lang="es">Próximamente</span><span data-lang="en">Coming soon</span></span></a>
+          <a class="btn btn-primary tpl-btn" href="https://docs.google.com/presentation/d/1rpwSs6Gsv2tnlcF5VhfwAeKn0vYz6nFD/export/pptx" target="_blank" rel="noopener noreferrer"><span class="ok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-lang="es">Descargar</span><span data-lang="en">Download</span></span><span class="soon"><span data-lang="es">Próximamente</span><span data-lang="en">Coming soon</span></span></a>
         </div>
       </article>
 
@@ -654,7 +675,7 @@
           <h3>Reverse pitch</h3>
           <p><span data-lang="es">Lo que no salió como esperabas, por qué y qué aprendiste. Los tropiezos también son investigación.</span><span data-lang="en">What didn't go as planned, why, and what you learned. Setbacks are research too.</span></p>
           <p class="tpl-for"><b>→</b> <span data-lang="es">Para cualquier año</span><span data-lang="en">Any year</span></p>
-          <a class="btn btn-primary tpl-btn" href="https://docs.google.com/presentation/d/18lTEsiurZ7kxJzwOAw-YlpH_y3Q5RalvPtiQzu7mNts/export/pptx" target="_blank" rel="noopener noreferrer"><span class="ok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-lang="es">Descargar</span><span data-lang="en">Download</span></span><span class="soon"><span data-lang="es">Próximamente</span><span data-lang="en">Coming soon</span></span></a>
+          <a class="btn btn-primary tpl-btn" href="https://docs.google.com/presentation/d/1qyGnwVVaoE4skK8lnMaerDntLyrg6U6Z/export/pptx" target="_blank" rel="noopener noreferrer"><span class="ok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-lang="es">Descargar</span><span data-lang="en">Download</span></span><span class="soon"><span data-lang="es">Próximamente</span><span data-lang="en">Coming soon</span></span></a>
         </div>
       </article>
 
@@ -666,7 +687,7 @@
           <h3>General</h3>
           <p><span data-lang="es">Diapositivas base con el estilo de las jornadas (portada, secciones, tablas y figuras) para contar tu trabajo como quieras.</span><span data-lang="en">Base slides in the conference style (title slide, sections, tables and figures) to tell your work however you like.</span></p>
           <p class="tpl-for"><b>→</b> <span data-lang="es">Cualquier formato (5 o 10 min)</span><span data-lang="en">Any format (5 or 10 min)</span></p>
-          <a class="btn btn-primary tpl-btn" href="https://docs.google.com/presentation/d/1VQ2FFtqA4l9K3Lm7cFgVUXHjejzmCD7lSn8_lsCXBBQ/export/pptx" target="_blank" rel="noopener noreferrer"><span class="ok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-lang="es">Descargar</span><span data-lang="en">Download</span></span><span class="soon"><span data-lang="es">Próximamente</span><span data-lang="en">Coming soon</span></span></a>
+          <a class="btn btn-primary tpl-btn" href="https://docs.google.com/presentation/d/1o24anIaWs4dNgCH0aLEKUqvV7-KVC0um/export/pptx" target="_blank" rel="noopener noreferrer"><span class="ok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-lang="es">Descargar</span><span data-lang="en">Download</span></span><span class="soon"><span data-lang="es">Próximamente</span><span data-lang="en">Coming soon</span></span></a>
         </div>
       </article>
 
@@ -678,7 +699,7 @@
           <h3>Research questions</h3>
           <p><span data-lang="es">Diapositivas para contar tus preguntas, cómo las abordas y qué has encontrado.</span><span data-lang="en">Slides to walk through your questions, how you're tackling them and what you've found.</span></p>
           <p class="tpl-for"><b>→</b> <span data-lang="es">Presentación corta / pitch (5 min)</span><span data-lang="en">Short talk / pitch (5 min)</span></p>
-          <a class="btn btn-primary tpl-btn" href="https://docs.google.com/presentation/d/1bVv598-piUkjnR3blH1ERZ_Nlejht8aXTmBCsrt51KM/export/pptx" target="_blank" rel="noopener noreferrer"><span class="ok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-lang="es">Descargar</span><span data-lang="en">Download</span></span><span class="soon"><span data-lang="es">Próximamente</span><span data-lang="en">Coming soon</span></span></a>
+          <a class="btn btn-primary tpl-btn" href="https://docs.google.com/presentation/d/166u2MAQ6--uDwAQCwvF1-yBMIgH5QkZ-/export/pptx" target="_blank" rel="noopener noreferrer"><span class="ok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-lang="es">Descargar</span><span data-lang="en">Download</span></span><span class="soon"><span data-lang="es">Próximamente</span><span data-lang="en">Coming soon</span></span></a>
         </div>
       </article>
 
@@ -690,7 +711,7 @@
           <h3>Reverse pitch</h3>
           <p><span data-lang="es">Una estructura sencilla para contar el problema, lo que se torció y las lecciones que te llevas.</span><span data-lang="en">A simple structure to tell the problem, what went wrong and the lessons you take away.</span></p>
           <p class="tpl-for"><b>→</b> <span data-lang="es">Reverse pitch (5 min) · cualquier año</span><span data-lang="en">Reverse pitch (5 min) · any year</span></p>
-          <a class="btn btn-primary tpl-btn" href="https://docs.google.com/presentation/d/1XXdAIX_RGUb0-3mdU_ZhiyjRBCUx-JGu/export/pptx" target="_blank" rel="noopener noreferrer"><span class="ok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-lang="es">Descargar</span><span data-lang="en">Download</span></span><span class="soon"><span data-lang="es">Próximamente</span><span data-lang="en">Coming soon</span></span></a>
+          <a class="btn btn-primary tpl-btn" href="https://docs.google.com/presentation/d/1U9fnJb2eBconygJ1wAz7uIL0CjTmnTMp/export/pptx" target="_blank" rel="noopener noreferrer"><span class="ok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-lang="es">Descargar</span><span data-lang="en">Download</span></span><span class="soon"><span data-lang="es">Próximamente</span><span data-lang="en">Coming soon</span></span></a>
         </div>
       </article>
 
@@ -702,7 +723,7 @@
           <h3>Demo</h3>
           <p><span data-lang="es">Unas pocas diapositivas para situar tu demo antes de enseñarla en vivo: qué es, qué problema resuelve y qué vamos a ver.</span><span data-lang="en">A few slides to set up your demo before showing it live: what it is, what problem it solves and what we're about to see.</span></p>
           <p class="tpl-for"><b>→</b> <span data-lang="es">Demo (10 min) · si tienes algo funcionando que enseñar</span><span data-lang="en">Demo (10 min) · if you've got something working to show</span></p>
-          <a class="btn btn-primary tpl-btn" href="https://docs.google.com/presentation/d/1VWFv_xc6_PQGAmm7SXywshFIC5usPx_X/export/pptx" target="_blank" rel="noopener noreferrer"><span class="ok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-lang="es">Descargar</span><span data-lang="en">Download</span></span><span class="soon"><span data-lang="es">Próximamente</span><span data-lang="en">Coming soon</span></span></a>
+          <a class="btn btn-primary tpl-btn" href="https://docs.google.com/presentation/d/1_kywFquoPRwxhPoqOpO5xMEgHJGTyc1y/export/pptx" target="_blank" rel="noopener noreferrer"><span class="ok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-lang="es">Descargar</span><span data-lang="en">Download</span></span><span class="soon"><span data-lang="es">Próximamente</span><span data-lang="en">Coming soon</span></span></a>
         </div>
       </article>
     </div>
@@ -724,10 +745,10 @@
     <div class="prog">
       <div class="rv">
         <ul class="tl">
-          <li><span class="h">08:30 – 09:00</span><span class="b"><span data-lang="es">Registro</span><span data-lang="en">Registration</span></span></li>
-          <li><span class="h">09:00 – 09:15</span><span class="b"><span data-lang="es">Bienvenida</span><span data-lang="en">Welcome</span></span></li>
-          <li><span class="h">09:15 – 10:00</span><span class="b">Networking</span></li>
-          <li class="brk"><span class="h">10:00 – 10:30</span><span class="b"><span data-lang="es">Café</span><span data-lang="en">Coffee</span></span></li>
+          <li><span class="h">08:30 – 09:50</span><span class="b"><span data-lang="es">Registro</span><span data-lang="en">Registration</span></span></li>
+          <li><span class="h">09:00 – 09:50</span><span class="b">Networking</span></li>
+          <li><span class="h">09:50 – 10:10</span><span class="b"><span data-lang="es">Bienvenida</span><span data-lang="en">Welcome</span></span></li>
+          <li class="brk"><span class="h">10:10 – 10:30</span><span class="b"><span data-lang="es">Café</span><span data-lang="en">Coffee</span></span></li>
           <li><span class="h">10:30 – 12:00</span><span class="b"><span data-lang="es">Presentaciones · Bloque 1</span><span data-lang="en">Talks · Block 1</span></span></li>
           <li class="brk"><span class="h">12:00 – 12:30</span><span class="b"><span data-lang="es">Café</span><span data-lang="en">Coffee</span></span></li>
           <li><span class="h">12:30 – 14:00</span><span class="b"><span data-lang="es">Presentaciones · Bloque 2</span><span data-lang="en">Talks · Block 2</span></span></li>
@@ -749,24 +770,6 @@
           <a href="https://www.car.upm-csic.es/" target="_blank" rel="noopener noreferrer">car.upm-csic.es ↗</a>
         </div>
       </aside>
-    </div>
-  </div>
-</section>
-
-<!-- ===================================================== REQUISITOS -->
-<section class="band band-navy" id="requisitos">
-  <div class="wrap">
-    <div class="req">
-      <figure class="ph rv" data-tone="a"><img src="assets/photos/requisitos-doctorandos.jpg" alt="" onerror="this.remove()"><span class="ph-label">Foto · Doctorandos del CAR en el laboratorio</span></figure>
-      <div class="rv rv-d1">
-        <p class="sec-tag"><span data-lang="es">Requisitos</span><span data-lang="en">Requirements</span></p>
-        <h2 style="font-size:clamp(1.9rem,3.4vw,2.8rem);margin-bottom:28px"><span data-lang="es">¿Quién puede participar?</span><span data-lang="en">Who can take part?</span></h2>
-        <ul class="check">
-          <li><b>01</b><span><span data-lang="es">Estar haciendo el doctorado en el CAR. Da igual en qué programa estés matriculado o si estás de estancia en el centro.</span><span data-lang="en">Be doing your PhD at CAR. Doesn't matter which programme you're enrolled in, or if you're just here on a research stay.</span></span></li>
-          <li><b>02</b><span><span data-lang="es"><strong>Obligatorio:</strong> elaborar un póster que sintetice tu proyecto de investigación y enviarlo antes del 8 de noviembre.</span><span data-lang="en"><strong>Mandatory:</strong> prepare a poster summarising your research project and send it in by November 8.</span></span></li>
-          <li><b>03</b><span><span data-lang="es"><strong>Opcional:</strong> realizar una presentación en alguno de los formatos disponibles (larga, corta o reverse pitch).</span><span data-lang="en"><strong>Optional:</strong> give a talk in one of the available formats (long, short or reverse pitch).</span></span></li>
-        </ul>
-      </div>
     </div>
   </div>
 </section>
