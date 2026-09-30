@@ -318,7 +318,10 @@
   .venue .meta a{text-decoration:none;border-bottom:1px solid var(--line);}
 
   /* QUIÉN PARTICIPA (dentro de "Participar") */
-  .who-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:72px;}
+  /* fila 1: tarjeta de predocs + foto (4:3, sin recortar); fila 2: tarjeta de público a todo el ancho */
+  .who-wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:16px;margin-bottom:72px;}
+  .who-wrap .ph{border-radius:6px;aspect-ratio:4/3;align-self:center;}
+  .who-wrap .who:not(.who-main){grid-column:1/-1;}
   .who{border-radius:6px;padding:28px 30px;background:var(--white);border:1px solid var(--line);}
   .who small{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);}
   .who h3{font-size:clamp(1.4rem,2.2vw,1.8rem);margin:10px 0 16px;}
@@ -380,6 +383,7 @@
     .fmt p{grid-column:2;}
     .tl li.brk{margin:0;padding-left:12px;padding-right:12px;}
     .feature .ph{height:300px;}
+    .who-wrap{grid-template-columns:1fr;}
     .tpl-grid{grid-template-columns:1fr 1fr;}
   }
   @media (max-width:900px){
@@ -533,7 +537,7 @@
       <p class="aside"><span data-lang="es">Si haces el doctorado en el CAR, participas activamente: un póster obligatorio y, si te apetece, una charla. Si no eres predoc, puedes venir a verlo todo.</span><span data-lang="en">If you're doing your PhD at CAR, you take an active part: a mandatory poster and, if you fancy it, a talk. If you're not a PhD student, you're welcome to come and see it all.</span></p>
     </div>
 
-    <div class="who-grid rv">
+    <div class="who-wrap rv">
       <div class="who who-main">
         <small><span data-lang="es">Doctorandos del CAR</span><span data-lang="en">CAR PhD students</span></small>
         <h3><span data-lang="es">Participas activamente</span><span data-lang="en">You take an active part</span></h3>
@@ -543,6 +547,7 @@
           <li><b>03</b><span><span data-lang="es"><strong>Opcional:</strong> una presentación en alguno de los formatos (larga, demo, corta o reverse pitch).</span><span data-lang="en"><strong>Optional:</strong> a talk in one of the formats (long, demo, short or reverse pitch).</span></span></li>
         </ul>
       </div>
+      <figure class="ph" data-tone="a"><img src="assets/photos/requisitos-doctorandos.jpg" alt="" onerror="this.remove()"><span class="ph-label">Foto · Doctorandos del CAR en el laboratorio</span></figure>
       <div class="who">
         <small><span data-lang="es">¿No eres predoc?</span><span data-lang="en">Not a PhD student?</span></small>
         <h3><span data-lang="es">Ven de público</span><span data-lang="en">Come along</span></h3>
