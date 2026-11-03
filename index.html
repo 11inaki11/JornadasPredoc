@@ -146,6 +146,7 @@
   .btn-outline{background:transparent;color:var(--blue);border-color:var(--blue);}
   .btn-outline:hover{background:var(--blue);color:#fff;}
   .btn .arr{font-family:var(--mono);}
+  button.btn{font-family:inherit;cursor:pointer;}
   .facts{
     position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);
     border-top:1px solid var(--line-dark);
@@ -222,6 +223,51 @@
   .fmt p{color:var(--muted);font-size:.98rem;}
   .tpl-jump{display:inline-block;margin-top:14px;font-weight:600;color:var(--blue);text-decoration:none;border-bottom:1px solid var(--sky);}
   .tpl-jump:hover{border-color:var(--blue);}
+
+  /* INSTRUCCIONES (botón + ventana emergente <dialog id="instr">) */
+  .poster-actions{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:22px;}
+  #poster{scroll-margin-top:96px;}
+  .instr-cta{
+    font-family:inherit;text-align:left;cursor:pointer;border:0;color:#fff;
+    display:flex;align-items:center;gap:16px;width:100%;max-width:460px;padding:14px 20px 14px 14px;border-radius:8px;
+    background:linear-gradient(120deg,var(--blue) 0%,var(--blue-2) 55%,var(--cyan) 100%);
+    box-shadow:0 12px 30px rgba(3,69,191,.35);animation:ctaring 2.6s ease-out infinite;transition:transform .15s;
+  }
+  .instr-cta:hover{transform:translateY(-2px);}
+  .instr-cta:focus-visible{outline:3px solid var(--sky);outline-offset:3px;}
+  .instr-cta .ic{flex:none;width:46px;height:46px;border-radius:6px;background:#fff;color:var(--blue);display:grid;place-items:center;}
+  .instr-cta small{display:block;font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.82);margin-bottom:3px;}
+  .instr-cta b{display:block;font-family:var(--display);font-size:1.08rem;font-weight:700;line-height:1.25;}
+  .instr-cta .go{margin-left:auto;font-family:var(--mono);font-size:1.25rem;transition:transform .15s;}
+  .instr-cta:hover .go{transform:translateX(4px);}
+  @keyframes ctaring{
+    0%{box-shadow:0 12px 30px rgba(3,69,191,.35),0 0 0 0 rgba(46,163,242,.6);}
+    70%,100%{box-shadow:0 12px 30px rgba(3,69,191,.35),0 0 0 14px rgba(46,163,242,0);}
+  }
+  @media (prefers-reduced-motion: reduce){ .instr-cta{animation:none;} }
+  .poster-actions .tpl-jump{margin-top:0;}
+  .instr-row{margin:-20px 0 28px;}
+  .link-btn{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px;}
+  .modal{border:0;padding:0;border-radius:10px;width:calc(100% - 32px);max-width:640px;max-height:calc(100vh - 48px);overflow:auto;color:var(--ink);background:var(--white);box-shadow:0 30px 80px rgba(6,21,48,.45);}
+  .modal::backdrop{background:rgba(6,21,48,.72);}
+  .modal[open]{animation:modalin .25s ease;}
+  @keyframes modalin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  html:has(.modal[open]){overflow:hidden;}
+  .modal-in{position:relative;padding:34px 34px 30px;}
+  .modal-x{position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--white);color:var(--navy);font-size:1.4rem;line-height:1;cursor:pointer;}
+  .modal-x:hover{background:var(--ice);}
+  .modal h2{font-size:clamp(1.4rem,3vw,1.8rem);margin-bottom:20px;padding-right:44px;}
+  .modal-dl{background:var(--ice);border-left:3px solid var(--cyan);border-radius:0 6px 6px 0;padding:14px 18px;}
+  .modal-dl small{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);display:block;margin-bottom:4px;}
+  .modal-dl strong{font-family:var(--display);font-size:1.2rem;color:var(--navy);}
+  .modal h3{font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:26px 0 4px;}
+  .steps{list-style:none;margin:0;padding:0;}
+  .steps li{display:grid;grid-template-columns:30px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.96rem;line-height:1.55;color:var(--muted);}
+  .steps li b{font-family:var(--mono);font-size:.76rem;color:var(--blue);padding-top:3px;}
+  .steps li strong{color:var(--ink);font-weight:600;}
+  .modal-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;}
+  @media (max-width:560px){ .modal-in{padding:28px 20px 22px;} }
+  @media (prefers-reduced-motion: reduce){ .modal[open]{animation:none;} }
 
   /* PLANTILLAS (galería)
      Cada tarjeta es un <article class="tpl" data-kind="poster|slides" data-type="general|roadmap|rq|reverse|demo"> (filtros de formato y tipo).
@@ -456,12 +502,13 @@
     <div class="hero-actions">
       <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfoVAnUM-6L5foBFUURcu08NNNlkxwPZKhWRiWDv7Tc_5d9RA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer"><span data-lang="es">Inscríbete</span><span data-lang="en">Register</span> <span class="arr">→</span></a>
       <a class="btn btn-ghost" href="#programa"><span data-lang="es">Ver programa</span><span data-lang="en">See program</span></a>
+      <a class="btn btn-ghost" href="#poster"><span data-lang="es">Envío del póster</span><span data-lang="en">Poster submission</span></a>
     </div>
     <div class="facts">
       <div class="fact"><small><span data-lang="es">Fecha</span><span data-lang="en">Date</span></small><span><span data-lang="es">27 de noviembre de 2026</span><span data-lang="en">November 27, 2026</span></span></div>
       <div class="fact"><small><span data-lang="es">Localización</span><span data-lang="en">Venue</span></small><span>ETSI Industriales</span></div>
       <div class="fact"><small><span data-lang="es">Formato</span><span data-lang="en">Format</span></small><span><span data-lang="es">Pósteres + charlas cortas</span><span data-lang="en">Posters + short talks</span></span></div>
-      <div class="fact"><small><span data-lang="es">Inscripción</span><span data-lang="en">Registration</span></small><span class="live"><span data-lang="es">Abierta hasta el 30 oct</span><span data-lang="en">Open until Oct 30</span></span></div>
+      <div class="fact"><small><span data-lang="es">Inscripción</span><span data-lang="en">Registration</span></small><span class="live"><span data-lang="es">Abierta hasta el 8 nov</span><span data-lang="en">Open until Nov 8</span></span></div>
     </div>
   </div>
 </section>
@@ -542,7 +589,7 @@
         <h3><span data-lang="es">Participas activamente</span><span data-lang="en">You take an active part</span></h3>
         <ul>
           <li><b>01</b><span><span data-lang="es">Estás haciendo el doctorado en el CAR. Da igual en qué programa estés matriculado o si estás de estancia en el centro.</span><span data-lang="en">You're doing your PhD at CAR. Doesn't matter which programme you're enrolled in, or if you're just here on a research stay.</span></span></li>
-          <li><b>02</b><span><span data-lang="es"><strong>Obligatorio:</strong> un póster que resuma tu proyecto de investigación, enviado antes del 8 de noviembre.</span><span data-lang="en"><strong>Mandatory:</strong> a poster summarising your research project, sent in by November 8.</span></span></li>
+          <li><b>02</b><span><span data-lang="es"><strong>Obligatorio:</strong> un póster que resuma tu proyecto de investigación, enviado antes del 13 de noviembre.</span><span data-lang="en"><strong>Mandatory:</strong> a poster summarising your research project, sent in by November 13.</span></span></li>
           <li><b>03</b><span><span data-lang="es"><strong>Opcional:</strong> una presentación en alguno de los formatos (larga, demo, corta o reverse pitch).</span><span data-lang="en"><strong>Optional:</strong> a talk in one of the formats (long, demo, short or reverse pitch).</span></span></li>
         </ul>
       </div>
@@ -554,15 +601,18 @@
       </div>
     </div>
 
-    <div class="feature">
+    <div class="feature" id="poster">
       <figure class="ph rv" data-tone="b"><img src="assets/photos/actividades-poster.jpg" alt="" onerror="this.remove()"><span class="ph-label">Foto · Doctorandas del CAR junto a su póster</span></figure>
       <div class="rv rv-d1">
         <span class="tag tag-req"><span data-lang="es">Obligatorio</span><span data-lang="en">Mandatory</span></span>
         <h3><span data-lang="es">Póster</span><span data-lang="en">Poster</span></h3>
         <p><span data-lang="es">Cada doctorando trae un póster que resuma su proyecto. Para que no sea un marrón, tienes plantillas y ejemplos que solo hay que rellenar. Si prefieres ir por libre, también puedes: tu roadmap, tu metodología, tus resultados, lo que se te ha torcido por el camino... lo que mejor cuente en qué punto estás.</span><span data-lang="en">Every PhD student brings a poster summarising their project. So it's not a chore, there are templates and examples you can just fill in. If you'd rather do your own thing, go for it: your roadmap, your methodology, your results, what's gone wrong along the way, whatever best shows where you're at.</span></p>
-        <a class="tpl-jump" href="#plantillas"><span data-lang="es">Ver plantillas</span><span data-lang="en">See templates</span> →</a>
-        <p class="callout"><span data-lang="es">No tienes que imprimir ni pagar el póster. Nos lo envías y la organización se encarga del resto.</span><span data-lang="en">You don't have to print or pay for the poster. Send it to us and the organisers take care of the rest.</span></p>
-        <p class="deadline-note"><span data-lang="es"><strong>Fecha límite de envío: 8 de noviembre.</strong> Más adelante te contactaremos para indicarte cómo enviarlo.</span><span data-lang="en"><strong>Submission deadline: November 8.</strong> We'll get in touch later on to tell you how to send it.</span></p>
+        <div class="poster-actions">
+          <button type="button" class="instr-cta js-instr"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 10h6M9 14h6M9 18h3"/></svg></span><span class="tx"><small><span data-lang="es">Antes de enviar tu póster</span><span data-lang="en">Before you submit</span></small><b><span data-lang="es">Instrucciones de póster y slides</span><span data-lang="en">Poster &amp; slides instructions</span></b></span><span class="go" aria-hidden="true">→</span></button>
+          <a class="tpl-jump" href="#plantillas"><span data-lang="es">Ver plantillas</span><span data-lang="en">See templates</span> →</a>
+        </div>
+        <p class="callout"><span data-lang="es">Si lo envías a tiempo, no tienes que imprimir ni pagar el póster: la organización se encarga del resto.</span><span data-lang="en">If you send it in on time, you don't have to print or pay for the poster: the organisers take care of the rest.</span></p>
+        <p class="deadline-note"><span data-lang="es"><strong>Fecha límite de envío: 13 de noviembre.</strong> En las instrucciones tienes cómo subirlo.</span><span data-lang="en"><strong>Submission deadline: November 13.</strong> The instructions explain how to upload it.</span></p>
       </div>
     </div>
 
@@ -604,6 +654,10 @@
         <h2><span data-lang="es">No empieces desde una hoja en blanco.</span><span data-lang="en">Don't start from a blank page.</span></h2>
       </div>
       <p class="aside"><span data-lang="es">Elige la plantilla que mejor encaje con el momento de tu doctorado, descárgala y rellénala. Son solo un punto de partida: cámbiala todo lo que quieras.</span><span data-lang="en">Pick the template that best fits where you are in your PhD, download it and fill it in. It's just a starting point: change it as much as you like.</span></p>
+    </div>
+
+    <div class="instr-row rv">
+      <button type="button" class="instr-cta js-instr"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 10h6M9 14h6M9 18h3"/></svg></span><span class="tx"><small><span data-lang="es">Antes de enviar tu póster</span><span data-lang="en">Before you submit</span></small><b><span data-lang="es">Instrucciones de póster y slides</span><span data-lang="en">Poster &amp; slides instructions</span></b></span><span class="go" aria-hidden="true">→</span></button>
     </div>
 
     <details class="tpl-drop rv" id="tplDrop">
@@ -788,13 +842,13 @@
       <div class="deadlines">
         <div class="dl">
           <small><span data-lang="es">Inscripción</span><span data-lang="en">Registration</span></small>
-          <strong><span data-lang="es">30 de octubre</span><span data-lang="en">October 30</span></strong>
+          <strong><span data-lang="es">8 de noviembre</span><span data-lang="en">November 8</span></strong>
           <span><span data-lang="es">Último día para apuntarte a las jornadas.</span><span data-lang="en">Last day to sign up for the conference.</span></span>
         </div>
         <div class="dl">
           <small><span data-lang="es">Envío del póster</span><span data-lang="en">Poster submission</span></small>
-          <strong><span data-lang="es">8 de noviembre</span><span data-lang="en">November 8</span></strong>
-          <span><span data-lang="es">Más adelante te contactaremos para indicarte cómo enviarlo.</span><span data-lang="en">We'll get in touch later on to tell you how to send it.</span></span>
+          <strong><span data-lang="es">13 de noviembre</span><span data-lang="en">November 13</span></strong>
+          <span><span data-lang="es">Súbelo en PDF y PPTX siguiendo las <button type="button" class="link-btn js-instr">instrucciones</button>.</span><span data-lang="en">Upload it as PDF and PPTX, following the <button type="button" class="link-btn js-instr">instructions</button>.</span></span>
         </div>
       </div>
     </div>
@@ -820,6 +874,38 @@
     </div>
   </div>
 </section>
+
+<!-- ===================================================== INSTRUCCIONES (ventana emergente) -->
+<dialog class="modal" id="instr" aria-labelledby="instrTitle">
+  <div class="modal-in">
+    <button type="button" class="modal-x" aria-label="Cerrar">&times;</button>
+    <p class="sec-tag"><span data-lang="es">Instrucciones</span><span data-lang="en">Instructions</span></p>
+    <h2 id="instrTitle"><span data-lang="es">Tu póster y tu presentación</span><span data-lang="en">Your poster and your talk</span></h2>
+    <div class="modal-dl">
+      <small><span data-lang="es">Fecha límite para subir el póster</span><span data-lang="en">Poster upload deadline</span></small>
+      <strong><span data-lang="es">13 de noviembre</span><span data-lang="en">November 13</span></strong>
+    </div>
+
+    <h3><span data-lang="es">Póster</span><span data-lang="en">Poster</span></h3>
+    <ol class="steps">
+      <li><b>01</b><span><span data-lang="es"><strong>Súbelo en PDF y PPTX</strong> a través del formulario de entrega.</span><span data-lang="en"><strong>Upload it as PDF and PPTX</strong> through the submission form.</span></span></li>
+      <li><b>02</b><span><span data-lang="es"><strong>Si llega a tiempo, lo imprimimos nosotros.</strong> Si no, tendrás que traerlo impreso en A1 y a color, por tu cuenta.</span><span data-lang="en"><strong>If it arrives on time, we print it.</strong> If not, you'll need to bring it printed in A1, in colour, at your own expense.</span></span></li>
+      <li><b>03</b><span><span data-lang="es"><strong>Comprueba que sigue en A1</strong> antes de enviarlo: las herramientas de IA pueden cambiar el tamaño.</span><span data-lang="en"><strong>Check it's still A1</strong> before sending it: AI tools can change the page size.</span></span></li>
+      <li><b>04</b><span><span data-lang="es"><strong>Añade el código QR</strong> que te enviamos por correo en la zona reservada de la plantilla.</span><span data-lang="en"><strong>Add the QR code</strong> we emailed you in the space marked on the template.</span></span></li>
+      <li><b>05</b><span><span data-lang="es"><strong>No modifiques la cabecera ni el pie</strong>, salvo para añadir tus datos.</span><span data-lang="en"><strong>Don't change the header or footer</strong>, except to add your details.</span></span></li>
+    </ol>
+
+    <h3><span data-lang="es">Presentación</span><span data-lang="en">Talk</span></h3>
+    <ol class="steps">
+      <li><b>01</b><span><span data-lang="es"><strong>No modifiques la portada ni la diapositiva final</strong>, salvo para añadir tus datos.</span><span data-lang="en"><strong>Don't change the cover or final slide</strong>, except to add your details.</span></span></li>
+      <li><b>02</b><span><span data-lang="es"><strong>Trae tu presentación en un pendrive</strong> el día de las jornadas.</span><span data-lang="en"><strong>Bring your slides on a USB stick</strong> on the day.</span></span></li>
+    </ol>
+
+    <div class="modal-actions">
+      <a class="btn btn-dark" href="https://forms.gle/Ga4M8nvx6m767ELo9" target="_blank" rel="noopener noreferrer"><span data-lang="es">Subir mi póster</span><span data-lang="en">Upload my poster</span> <span class="arr">→</span></a>
+    </div>
+  </div>
+</dialog>
 
 <!-- ===================================================== FOOTER -->
 <footer>
@@ -856,10 +942,20 @@
       burger.setAttribute('aria-label', lang === 'en' ? 'Open menu' : 'Abrir menú');
       btn.textContent = lang === 'en' ? 'ES' : 'EN';
       btn.setAttribute('aria-label', lang === 'en' ? 'Cambiar a español' : 'Switch to English');
+      document.querySelectorAll('.modal-x').forEach(x => x.setAttribute('aria-label', lang === 'en' ? 'Close' : 'Cerrar'));
       try{ localStorage.setItem('jp-lang', lang); }catch(e){}
     }
     setLang(document.documentElement.lang === 'en' ? 'en' : 'es');
     btn.addEventListener('click', () => setLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
+  })();
+
+  // Ventana de instrucciones (póster y slides)
+  (function(){
+    const dlg = document.getElementById('instr');
+    if(!dlg || !dlg.showModal) return;
+    document.querySelectorAll('.js-instr').forEach(b => b.addEventListener('click', () => dlg.showModal()));
+    dlg.querySelector('.modal-x').addEventListener('click', () => dlg.close());
+    dlg.addEventListener('click', e => { if(e.target === dlg) dlg.close(); }); // clic en el fondo
   })();
 
   // Filtro de la galería de plantillas: formato (kind) × tipo (type)
