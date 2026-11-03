@@ -257,7 +257,9 @@
   .modal-x{position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--white);color:var(--navy);font-size:1.4rem;line-height:1;cursor:pointer;}
   .modal-x:hover{background:var(--ice);}
   .modal h2{font-size:clamp(1.4rem,3vw,1.8rem);margin-bottom:20px;padding-right:44px;}
-  .modal-dl{background:var(--ice);border-left:3px solid var(--cyan);border-radius:0 6px 6px 0;padding:14px 18px;}
+  .modal-dl{background:var(--ice);border-left:3px solid var(--cyan);border-radius:0 6px 6px 0;padding:14px 18px;display:grid;grid-template-columns:1fr 1fr;gap:14px 24px;}
+  .modal-dl .sub{display:block;font-size:.82rem;color:var(--muted);margin-top:2px;}
+  @media (max-width:560px){ .modal-dl{grid-template-columns:1fr;} }
   .modal-dl small{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);display:block;margin-bottom:4px;}
   .modal-dl strong{font-family:var(--display);font-size:1.2rem;color:var(--navy);}
   .modal h3{font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:26px 0 4px;}
@@ -589,7 +591,7 @@
         <h3><span data-lang="es">Participas activamente</span><span data-lang="en">You take an active part</span></h3>
         <ul>
           <li><b>01</b><span><span data-lang="es">Estás haciendo el doctorado en el CAR. Da igual en qué programa estés matriculado o si estás de estancia en el centro.</span><span data-lang="en">You're doing your PhD at CAR. Doesn't matter which programme you're enrolled in, or if you're just here on a research stay.</span></span></li>
-          <li><b>02</b><span><span data-lang="es"><strong>Obligatorio:</strong> un póster que resuma tu proyecto de investigación, enviado antes del 13 de noviembre.</span><span data-lang="en"><strong>Mandatory:</strong> a poster summarising your research project, sent in by November 13.</span></span></li>
+          <li><b>02</b><span><span data-lang="es"><strong>Obligatorio:</strong> un póster en A1 (594 × 841 mm, vertical) que resuma tu proyecto de investigación, enviado antes del 13 de noviembre.</span><span data-lang="en"><strong>Mandatory:</strong> an A1 poster (594 × 841 mm, portrait) summarising your research project, sent in by November 13.</span></span></li>
           <li><b>03</b><span><span data-lang="es"><strong>Opcional:</strong> una presentación en alguno de los formatos (larga, demo, corta o reverse pitch).</span><span data-lang="en"><strong>Optional:</strong> a talk in one of the formats (long, demo, short or reverse pitch).</span></span></li>
         </ul>
       </div>
@@ -612,6 +614,7 @@
           <a class="tpl-jump" href="#plantillas"><span data-lang="es">Ver plantillas</span><span data-lang="en">See templates</span> →</a>
         </div>
         <p class="callout"><span data-lang="es">Si lo envías a tiempo, no tienes que imprimir ni pagar el póster: la organización se encarga del resto.</span><span data-lang="en">If you send it in on time, you don't have to print or pay for the poster: the organisers take care of the rest.</span></p>
+        <p class="deadline-note"><span data-lang="es"><strong>Formato: A1 (594 × 841 mm), en vertical.</strong> Es el tamaño de todas las plantillas.</span><span data-lang="en"><strong>Format: A1 (594 × 841 mm), portrait.</strong> It's the size of all the templates.</span></p>
         <p class="deadline-note"><span data-lang="es"><strong>Fecha límite de envío: 13 de noviembre.</strong> En las instrucciones tienes cómo subirlo.</span><span data-lang="en"><strong>Submission deadline: November 13.</strong> The instructions explain how to upload it.</span></p>
       </div>
     </div>
@@ -882,15 +885,22 @@
     <p class="sec-tag"><span data-lang="es">Instrucciones</span><span data-lang="en">Instructions</span></p>
     <h2 id="instrTitle"><span data-lang="es">Tu póster y tu presentación</span><span data-lang="en">Your poster and your talk</span></h2>
     <div class="modal-dl">
-      <small><span data-lang="es">Fecha límite para subir el póster</span><span data-lang="en">Poster upload deadline</span></small>
-      <strong><span data-lang="es">13 de noviembre</span><span data-lang="en">November 13</span></strong>
+      <div>
+        <small><span data-lang="es">Fecha límite para subir el póster</span><span data-lang="en">Poster upload deadline</span></small>
+        <strong><span data-lang="es">13 de noviembre</span><span data-lang="en">November 13</span></strong>
+      </div>
+      <div>
+        <small><span data-lang="es">Formato del póster</span><span data-lang="en">Poster format</span></small>
+        <strong>A1 · 594 × 841 mm</strong>
+        <span class="sub"><span data-lang="es">En vertical</span><span data-lang="en">Portrait</span></span>
+      </div>
     </div>
 
     <h3><span data-lang="es">Póster</span><span data-lang="en">Poster</span></h3>
     <ol class="steps">
       <li><b>01</b><span><span data-lang="es"><strong>Súbelo en PDF y PPTX</strong> a través del formulario de entrega.</span><span data-lang="en"><strong>Upload it as PDF and PPTX</strong> through the submission form.</span></span></li>
       <li><b>02</b><span><span data-lang="es"><strong>Si llega a tiempo, lo imprimimos nosotros.</strong> Si no, tendrás que traerlo impreso en A1 y a color, por tu cuenta.</span><span data-lang="en"><strong>If it arrives on time, we print it.</strong> If not, you'll need to bring it printed in A1, in colour, at your own expense.</span></span></li>
-      <li><b>03</b><span><span data-lang="es"><strong>Comprueba que sigue en A1</strong> antes de enviarlo: las herramientas de IA pueden cambiar el tamaño.</span><span data-lang="en"><strong>Check it's still A1</strong> before sending it: AI tools can change the page size.</span></span></li>
+      <li><b>03</b><span><span data-lang="es"><strong>Comprueba que sigue en A1 (594 × 841 mm)</strong> antes de enviarlo: las herramientas de IA pueden cambiar el tamaño.</span><span data-lang="en"><strong>Check it's still A1 (594 × 841 mm)</strong> before sending it: AI tools can change the page size.</span></span></li>
       <li><b>04</b><span><span data-lang="es"><strong>Añade el código QR</strong> que te enviamos por correo en la zona reservada de la plantilla.</span><span data-lang="en"><strong>Add the QR code</strong> we emailed you in the space marked on the template.</span></span></li>
       <li><b>05</b><span><span data-lang="es"><strong>No modifiques la cabecera ni el pie</strong>, salvo para añadir tus datos.</span><span data-lang="en"><strong>Don't change the header or footer</strong>, except to add your details.</span></span></li>
     </ol>
